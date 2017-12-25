@@ -1,0 +1,53 @@
+一些需要的软件包
+sudo apt-get install vim git zsh curl python-pip openssh
+
+更改terminal为zsh
+sudo chsh -s $(which zsh)
+
+下载并安装oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+修改主题theme agnoster
+
+解决字体问题，安装好后在terminal的设置里面选择。
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+
+精简 user@hostname：添加export DEFAULT_USER="username"到~/.zshrc中，可以隐藏固定的 user@hostname 信息。
+
+开发用的虚拟环境管理
+sudo pip install virtualenv virtualenvwrapper
+
+添加到~/.zshrc中，这样virtualenvwrapper的设置在每次打开终端的时候生效。
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+第一次设置完可以source一下，或者新开终端。
+source ~/.zsh
+
+python3.6
+添加第三方仓库
+sudo add-apt-repository ppa:jonathonf/python-3.6
+更新
+sudo apt-get update
+安装
+sudo apt-get install python3.6
+
+pip阿里源
+mkdir ~/.pip
+vim ~/.pip/pip.conf
+
+[global]
+trusted-host=mirrors.aliyun.com
+index-url=https://mirrors.aliyun.com/pypi/simple/
+
+vim配置
+
