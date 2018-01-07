@@ -7,14 +7,32 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Lokaltog/vim-powerline'
 " 神器
 Plugin 'Valloric/YouCompleteMe'
+" flake8 pep8
+Plugin 'nvie/vim-flake8'
+" virtualenv
+Plugin 'plytophogy/vim-virtualenv'
 call vundle#end()
 filetype plugin indent on  
 
 " Youcompleteme
-let g:ycm_python_binary_path = '/usr/local/bin/python3'
+" let g:ycm_python_binary_path = '/usr/local/bin/python3'
+let g:ycm_autoclose_preview_window_after_completion=1
 
 " 显示行号
 set number
+
+" python with virtualenv support
+"py << EOF
+"import os.path
+"import sys
+"import vim
+"if 'VIRTUAL_ENV' in os.environ:
+"    project_base_dir = os.environ['VIRTUAL_ENV']
+"    sys.path.insert(0, project_base_dir)
+"    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"    execfile(activate_this, dict(__file__=activate_this))
+"EOF
+
 " 显示标尺
 " set ruler
 " 历史纪录
@@ -22,7 +40,7 @@ set history=1000
 " 输入的命令显示出来，看的清楚些
 set showcmd
 " 状态行显示的内容
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 " 启动显示状态行1，总是显示状态行2
 set laststatus=2
 " 语法高亮显示
@@ -99,7 +117,7 @@ set autowrite
 " 突出显示当前行 
 set cursorline
 " 突出显示当前列
-set cursorcolumn
+"set cursorcolumn
 "设置光标样式为竖线vertical bar
 " Change cursor shape between insert and normal mode in iTerm2.app
 "if $TERM_PROGRAM =~ "iTerm"
@@ -112,4 +130,29 @@ set clipboard+=unnamed
 set autoread
 " 顶部底部保持3行距离
 set scrolloff=3
+" vim-virtualenv
+" set statusline+=%{virtualenv#statusline()}
+" 
+" Function to activate a virtualenv in the embedded interpreter for
+" omnicomplete and other things like that.
+function LoadVirtualEnv(path)
+    let activate_this = a:path . '/bin/activate_this.py'
+    if getftype(a:path) == "dir" && filereadable(activate_this)
+        python << EOF
+import vim
+activate_this = vim.eval('l:activate_this')
+execfile(activate_this, dict(__file__=activate_this))
+EOF
+    endif
+endfunction
 
+" Load up a 'stable' virtualenv if one exists in ~/.virtualenv
+let defaultvirtualenv = $HOME . "/.virtualenvs/stable"
+
+" Only attempt to load this virtualenv if the defaultvirtualenv
+" actually exists, and we aren't running with a virtualenv active.
+if has("python")
+    if empty($VIRTUAL_ENV) && getftype(defaultvirtualenv) == "dir"
+        call LoadVirtualEnv(defaultvirtualenv)
+    endif
+endif

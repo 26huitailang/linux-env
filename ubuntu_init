@@ -50,4 +50,50 @@ trusted-host=mirrors.aliyun.com
 index-url=https://mirrors.aliyun.com/pypi/simple/
 
 vim配置
+vim.md 中。
+
+Postgresql
+
+```
+sudo apt-get install postgresql-9.5
+
+sudo -u postgres psql
+# ALTER USER postgres WITH PASSWORD '123456';
+# \q
+```
+
+```
+sudo passwd  # root 密码
+su root
+sudo passwd -d postgres  # DEL password
+sudo -u postgres passwd  # set password
+```
+im哈皮的coding吧。
+stgresSQL数据库配置实现远程访问
+
+vi /etc/postgresql/9.4/main/postgresql.conf
+
+1.监听任何地址访问，修改连接权限
+
+#listen_addresses = 'localhost' 改为 listen_addresses = '*'
+
+2.启用密码验证
+
+#password_encryption = on 改为 password_encryption = on
+
+vi /etc/postgresql/9.4/main/pg_hba.conf
+
+在文档末尾加上以下内容
+
+host all all 0.0.0.0 0.0.0.0 md5
+
+6、重启服务
+
+/etc/init.d/postgresql restart
+
+7、5432端口的防火墙设置
+
+5432为postgreSQL默认的端口
+
+iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 5432 -j ACCEPT
 
