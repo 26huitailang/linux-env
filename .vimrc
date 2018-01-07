@@ -1,3 +1,6 @@
+" get from vim-pathogen
+call pathogen#infect()
+
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -11,11 +14,13 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'nvie/vim-flake8'
 " virtualenv
 Plugin 'plytophogy/vim-virtualenv'
+" nerdtree
+Plugin 'scrooloose/nerdtree'
 call vundle#end()
 filetype plugin indent on  
 
 " Youcompleteme
-" let g:ycm_python_binary_path = '/usr/local/bin/python3'
+let g:ycm_python_binary_path = '/usr/local/bin/python3'
 let g:ycm_autoclose_preview_window_after_completion=1
 
 " 显示行号
