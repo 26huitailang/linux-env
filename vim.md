@@ -1,5 +1,8 @@
 VIM 配置
 
+# 判断vim对python的支持
+`vim --version | grep python`
+
 基础配置
 
 配置文件在用户目录下~/.vimrc ,如果没有，就自己创建一个。

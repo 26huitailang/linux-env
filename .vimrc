@@ -1,5 +1,5 @@
 " get from vim-pathogen
-call pathogen#infect()
+" call pathogen#infect()
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -27,16 +27,16 @@ let g:ycm_autoclose_preview_window_after_completion=1
 set number
 
 " python with virtualenv support
-"py << EOF
-"import os.path
-"import sys
-"import vim
-"if 'VIRTUAL_ENV' in os.environ:
-"    project_base_dir = os.environ['VIRTUAL_ENV']
-"    sys.path.insert(0, project_base_dir)
-"    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-"    execfile(activate_this, dict(__file__=activate_this))
-"EOF
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 " 显示标尺
 " set ruler
