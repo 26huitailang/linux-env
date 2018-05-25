@@ -1,0 +1,13 @@
+{
+    "python.venvPath": "~/.virtualenvs",
+    "python.venvFolders": [
+        "envs",
+        ".pyenv",
+        ".direnv",
+        ".virtualenvs",
+      ],
+    "python.pythonPath": "/Users/26huitailang/git-checkout/tz-main/venv-tz/bin/python",
+    "git.autofetch": true,
+    "terminal.integrated.fontFamily": "Meslo LG S DZ for Powerline",
+    "terminal.integrated.fontSize": 14,  // 本人眼睛不好喜歡大一點的字...
+}
