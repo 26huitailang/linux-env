@@ -20,8 +20,9 @@ call vundle#end()
 filetype plugin indent on  
 
 " Youcompleteme
-let g:ycm_python_binary_path = '/usr/local/bin/python3'
+let g:ycm_python_binary_path = 'python'  " 进入命令行python使用的第一个环境，可以识别virtualenv
 let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " 显示行号
 set number
