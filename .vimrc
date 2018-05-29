@@ -104,6 +104,8 @@ au FileType java,php setl shiftwidth=4
 au FileType java,php setl tabstop=4
 " 高亮搜索的字符串
 set hlsearch
+" 搜索键入时，即时匹配
+set incsearch
 
 " 检测文件的类型
 filetype on
@@ -123,7 +125,7 @@ set autowrite
 " 突出显示当前行 
 set cursorline
 " 突出显示当前列
-"set cursorcolumn
+" set cursorcolumn
 "设置光标样式为竖线vertical bar
 " Change cursor shape between insert and normal mode in iTerm2.app
 "if $TERM_PROGRAM =~ "iTerm"
