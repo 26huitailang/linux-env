@@ -24,6 +24,7 @@ filetype plugin indent on
 map <leader>t :NERDTree<CR> 
 " YCM跳转定义
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <leader>g  :NERDTree<CR>
 " leader key --------------- end ----------------- 
 
 " Youcompleteme
