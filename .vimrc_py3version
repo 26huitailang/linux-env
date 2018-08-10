@@ -16,6 +16,9 @@ Plugin 'nvie/vim-flake8'
 Plugin 'plytophogy/vim-virtualenv'
 " nerdtree
 Plugin 'scrooloose/nerdtree'
+" markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 call vundle#end()
 filetype plugin indent on  
 
