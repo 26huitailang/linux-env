@@ -1,3 +1,4 @@
+" python2 版本，vim支持python的使用
 " get from vim-pathogen
 " call pathogen#infect()
 

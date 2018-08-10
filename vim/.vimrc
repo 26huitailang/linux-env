@@ -1,3 +1,4 @@
+" python3 version 主要使用这个版本，brew安装vim默认python3
 " get from vim-pathogen
 " call pathogen#infect()
 
