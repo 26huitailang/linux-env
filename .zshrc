@@ -1,10 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export PATH=/usr/local/opt/python/bin:$PATH
-export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}
+# export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}
 export PATH=/usr/local/bin/:${PATH}
 export PATH=/usr/local/share/python:$PATH
-export PATH=/Users/26huitailang/.pyenv/versions/3.6.5/bin:${PATH}
+# export PATH=/Users/26huitailang/.pyenv/versions/3.6.5/bin:${PATH}
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/26huitailang/.oh-my-zsh
@@ -69,6 +70,7 @@ plugins=(
   git
   autojump
   virtualenv
+  gitbook
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,3 +112,11 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
 fi
+
+# ---------- alias start ----------
+# alias 可以查看所有可用列表
+# ssh
+alias go_kali_server="ssh root@192.168.9.236"
+# git
+# 详见~/.oh-my-zsh/plugins/git/git.plugin.zsh
+# ---------- alias end   ----------
