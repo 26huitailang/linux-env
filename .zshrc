@@ -6,6 +6,8 @@ export PATH=/usr/local/bin/:${PATH}
 export PATH=/usr/local/share/python:$PATH
 # export PATH=/Users/26huitailang/.pyenv/versions/3.6.5/bin:${PATH}
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH=/Users/26huitailang/Downloads/apache-maven-3.5.4/bin:$PATH
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/26huitailang/.oh-my-zsh
