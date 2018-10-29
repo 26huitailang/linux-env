@@ -21,15 +21,14 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 call vundle#end()
-filetype plugin indent on  
+filetype plugin indent on
 
-" leader key --------------- start ----------------- 
+" leader key --------------- start -----------------
 " nerdtree
-map <leader>t :NERDTree<CR> 
+map <leader>t :NERDTree<CR>
 " YCM跳转定义
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-map <leader>g  :NERDTree<CR>
-" leader key --------------- end ----------------- 
+" leader key --------------- end -----------------
 
 " Youcompleteme
 let g:ycm_python_binary_path = 'python'  " 进入命令行python使用的第一个环境，可以识别virtualenv
@@ -39,6 +38,8 @@ let g:ycm_autoclose_preview_window_after_completion=1
 
 " 显示行号
 set number
+" 相对行号
+set relativenumber
 
 " python with virtualenv support
 "py3 << EOF
@@ -136,7 +137,7 @@ set completeopt=longest,menu
 set noeb
 " 自动保存
 set autowrite
-" 突出显示当前行 
+" 突出显示当前行
 set cursorline
 " 突出显示当前列
 " set cursorcolumn
@@ -154,7 +155,7 @@ set autoread
 set scrolloff=3
 " vim-virtualenv
 " set statusline+=%{virtualenv#statusline()}
-" 
+"
 " Function to activate a virtualenv in the embedded interpreter for
 " omnicomplete and other things like that.
 function LoadVirtualEnv(path)
