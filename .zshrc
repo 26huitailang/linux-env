@@ -8,6 +8,8 @@ export PATH=/usr/local/share/python:$PATH
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
 export PATH=/Users/26huitailang/Downloads/apache-maven-3.5.4/bin:$PATH
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
+# rust
+export PATH="$HOME/.cargo/bin:$PATH" 
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/26huitailang/.oh-my-zsh
@@ -122,3 +124,4 @@ alias go_kali_server="ssh root@192.168.9.236"
 # git
 # 详见~/.oh-my-zsh/plugins/git/git.plugin.zsh
 # ---------- alias end   ----------
+# . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
