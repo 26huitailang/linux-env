@@ -1,2 +1,3 @@
 - base: packaged into box
 - sample: custom for init usage
+- [My Vagrant Box](https://app.vagrantup.com/26huitailang/boxes/debian9-stretch/versions/1.0.0)
