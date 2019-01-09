@@ -75,6 +75,7 @@ plugins=(
   autojump
   virtualenv
   gitbook
+  fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -125,3 +126,10 @@ alias go_kali_server="ssh root@192.168.9.236"
 # 详见~/.oh-my-zsh/plugins/git/git.plugin.zsh
 # ---------- alias end   ----------
 # . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+# --- fzf start ---
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
+
+# --- fzf end ---
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
