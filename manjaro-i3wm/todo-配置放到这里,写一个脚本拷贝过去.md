@@ -1,0 +1,5 @@
+- i3 config
+- Xresource
+- xprofile
+- zsh相关配置
+-

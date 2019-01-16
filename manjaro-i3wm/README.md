@@ -12,7 +12,7 @@
 - python
 - autojump
 - 网易音乐
-- fzf ?
+- fzf
 - rofi ?
 - pycharm
 
@@ -63,3 +63,9 @@ export 路径 `$XDG_CONFIG_HOME`, `~/.config` , 在这个目录下建powerline�
     cp /usr/lib/python3.7/site-packages/powerline/config_files/themes/tmux/default.json ~/.config/powerline/themes/tmux/default.json
 
 其他的看官方文档修改, https://powerline.readthedocs.io/en/master/configuration.html
+
+## 壁纸
+
+- 透明度?
+- 壁纸
+-
