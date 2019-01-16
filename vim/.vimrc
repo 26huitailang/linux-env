@@ -26,6 +26,7 @@ filetype plugin indent on
 " leader key --------------- start -----------------
 " nerdtree
 map <leader>t :NERDTree<CR>
+" autocm VimEnter * NERDTree
 " YCM跳转定义
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " leader key --------------- end -----------------

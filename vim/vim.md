@@ -67,3 +67,9 @@ filetype plugin indent on
 `sudo apt-get install ctags`
 
 # taglist
+
+# YCM 编译
+
+- cd ~/.vim/bundle/YoucompleteMe/
+- ./install.py --calang-completer, include c family
+- cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py ~/.vim/
