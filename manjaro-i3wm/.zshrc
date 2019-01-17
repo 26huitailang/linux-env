@@ -136,3 +136,6 @@ powerline-daemon -q
 source /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 export TERM="screen-256color"
 export XDG_CONFIG_HOME=~/.config
+
+# nodejs
+source /usr/share/nvm/init-nvm.sh

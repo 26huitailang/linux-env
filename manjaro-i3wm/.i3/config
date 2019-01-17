@@ -2,7 +2,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod1
+set $mod Mod4
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -57,9 +57,12 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec palemoon
+# bindsym $mod+F2 exec palemoon
+bindsym $mod+F2 exec --no-startup-id firefox
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
+bindsym $mod+F4 exec --no-startu-id netease-cloud-music
+bindsym $mod+Shift+F4 exec --no-startu-id pavucontrol
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
@@ -301,7 +304,7 @@ exec_always --no-startup-id fix_xcursor
 exec --no-startup-id fcitx
 # nitrogen random wallpaper shell
 exec --no-startup-id ~/wallpaper.sh
-
+exec --no-startup-id blueman-manager
 # ---- custom end ----
 
 # Color palette used for the terminal ( ~/.Xresources file )

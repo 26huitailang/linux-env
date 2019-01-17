@@ -14,6 +14,8 @@
 - powerline folder, 自定义的配置
 - .i3/config
 - wallpaper.sh, nitrogen自动更换壁纸的脚本
+- .npmrc, source
+- .pip/pip.conf, source
 
 ## install.sh
 
@@ -32,6 +34,7 @@
 - pycharm-community
 - enpass-bin
 - visual-studio-code-bin
+- gitkraken, git gui tool
 
 ## 还要做
 
@@ -48,9 +51,11 @@ WenQuanYi Zen Hei Mono稍微能看一点,还是MAC舒服
 - 搜狗开机启动，`～/.i3/config`
   - `exec --no-startuo-id fcitx`
   - 也可以是`.xprofile`, `fcitx &`
-- status bar
-  - [] 网络显示?
-  - [] 时间显示?
+
+## status bar
+
+- [] 网络显示?
+- [] 时间显示?
 
 ## tools
 
@@ -127,3 +132,13 @@ export 路径 `$XDG_CONFIG_HOME`, `~/.config` , 在这个目录下建powerline�
 - 用bluetooth,开机启动
 - 配合palseaudio管理声音的输入输出
 - 如果没有声音尝试重启网易云音乐
+
+## nodejs
+
+安装nvm版本控制。
+
+- nvm ls-remote , 查看版本
+- nvm install VERSION
+- npm install -g @vue/cli
+- 项目 npm install -s
+

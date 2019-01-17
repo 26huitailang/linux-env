@@ -21,6 +21,10 @@ sudo pacman -S fcitx-configtool --noconfirm
 sudo pacman -S fcitx-sogoupinyin --noconfirm
 # boot load ~/.i3/config exec --no-startuo-id fcitx
 
+# xfce4-terminal
+sudo pacman -S xfce4-terminal --noconfirm
+sudo pacman -S compton --noconfirm  # 透明问题
+
 # openssh
 sudo pacman -S openssh --noconfirm
 sudo systemctl enable sshd
@@ -66,6 +70,12 @@ sudo pacman -S autojump
 
 # enpass
 sudo pacman -S enpass-bin
+
+# nodejs
+sudo pacman -S nvm --noconfirm
+
+# git gui
+sudo pacman -S gitkraken --noconfirm
 
 # reboot
 echo "sudo reboot"
