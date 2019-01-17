@@ -10,7 +10,7 @@ fi
 
 sudo pacman -Syu --noconfirm
 sudo pacman -S archlinuxcn-keyring --noconfirm
-sudo pacman -Syyu  --noconfirm
+sudo pacman -Syu  --noconfirm
 
 # 工具
 # firefox
@@ -19,10 +19,6 @@ sudo pacman -S firefox firefox-i18n-zh-cn --noconfirm
 sudo pacman -S fcitx-im --noconfirm
 sudo pacman -S fcitx-configtool --noconfirm
 sudo pacman -S fcitx-sogoupinyin --noconfirm
-if ! grep "GTK_IM_MODULE" ~/.xprofile
-then
-	sudo sh -c "echo -e \"export GTK_IM_MODULE=fcitx\nexport QT_IM_MODULE=fcitx\nexport XMODIFIERS=\"@im=fcitx\"\" >> ~/.xprofile"
-fi
 # boot load ~/.i3/config exec --no-startuo-id fcitx
 
 # openssh
@@ -31,12 +27,8 @@ sudo systemctl enable sshd
 sudo systemctl start sshd
 
 # fonts
-pacman -S adobe-source-code-pro-fonts wqy-bitmapfont wqy-microhei wqy-zenhei
-echo "vim ~/.Xresources
-xft.dpi:125  #设置dpi，对4k高分屏需要设置，设置成默认值的2倍试试。
-URxvt.font: xft:Source Code Pro:antialias=True:pixelsize=18,xft:WenQuanYi Zen Hei:pixelsize=18
-URxvt.boldfont: xft:Source Code Pro:antialias=True:pixelsize=18,xft:WenQuanYi Zen Hei:pixelsize=18
-"
+sudo pacman -S adobe-source-code-pro-fonts wqy-bitmapfont wqy-microhei wqy-zenhei --noconfirm
+sudo pacman -S ttf-font-awesome  --noconfirm
 
 # clock sync
 sudo hwclock --systohc
@@ -63,7 +55,7 @@ sudo pacman -S cmake --noconfirm
 sudo pacman -S visual-studio-code-bin --noconfirm
 
 # powerline
-sudo pacman -S powerline powerline-fonts
+sudo pacman -S powerline powerline-fonts --noconfirm
 source /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # 网易云音乐
@@ -71,6 +63,9 @@ sudo pacman -S netease-cloud-music
 
 # autojump
 sudo pacman -S autojump
+
+# enpass
+sudo pacman -S enpass-bin
 
 # reboot
 echo "sudo reboot"
