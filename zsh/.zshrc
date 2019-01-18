@@ -76,6 +76,12 @@ plugins=(
   virtualenv
   gitbook
   fzf
+  brew
+  npm
+  fabric
+  zsh-autosuggestions
+  vagrant
+  tmux
 )
 
 source $ZSH/oh-my-zsh.sh
