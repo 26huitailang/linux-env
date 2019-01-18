@@ -3,6 +3,8 @@
 ## screenshot
 
 ![可以开工的样子](./2019-01-17-161222_1912x968_scrot.png)
+![manjaro-i3wm-vim-preview](./2019-01-18-115043_1744x967_scrot.png)
+
 
 ## config
 
