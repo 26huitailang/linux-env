@@ -117,7 +117,8 @@ export 路径 `$XDG_CONFIG_HOME`, `~/.config` , 在这个目录下建powerline�
   - 然后修改 `.i3/config` 下面启动的配置
   - icon文件，在[web](http://mathew-kurian.github.io/CharacterMap/)打开`fa-*`，选择喜欢的把Character放到对应的conky配置中即可。保存conky自动刷新。
 - [x] 关于AwesomeFont显示问题，已经安装了`ttf-font-awesome`, conky不显示
-  - 配置中用的是`FontAwesome`, 用命令`fc-list | grep -i awesome`可以看到没有对应的font，需要的可以改成FontAwesome5Free之类的，看icon属于哪个文件，注意不要有空格，被这个困扰了很久。
+  - 配置中用的是`FontAwesome`, 用命令`fc-list | grep -i awesome`可以看到没有对应的font，需要的可以改成FontAwesome5Free之类的，看icon属于哪个文件。
+  - fc-cache -fv，刷新缓存
 
 ## statusbar
 
