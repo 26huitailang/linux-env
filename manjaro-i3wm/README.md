@@ -5,7 +5,6 @@
 ![可以开工的样子](./2019-01-17-161222_1912x968_scrot.png)
 ![manjaro-i3wm-vim-preview](./2019-01-18-115043_1744x967_scrot.png)
 
-
 ## config
 
 拷贝到这里管理,修改后运行copy_config.sh 到相应目录
@@ -71,11 +70,12 @@ WenQuanYi Zen Hei Mono稍微能看一点,还是MAC舒服
   - opacity 推荐0.77左右
 - .Xresources 修改urxrt字体,`xrdb -merge .Xresources`生效设置
 
-  ```
+  ```conf
   xft.dpi:125  #设置dpi，对4k高分屏需要设置，设置成默认值的2倍试试。
   URxvt.font: xft:Source Code Pro:antialias=True:pixelsize=14,xft:WenQuanYi Zen Hei:pixelsize=14
   URxvt.boldfont: xft:Source Code Pro:antialias=True:pixelsize=14,xft:WenQuanYi Zen Hei:pixelsize=14
   ```
+
 ## python
 
 3.3以后自带venv工具，`python -m venv venv`，也可以安装使用virtualenv工具.
@@ -106,17 +106,20 @@ export 路径 `$XDG_CONFIG_HOME`, `~/.config` , 在这个目录下建powerline�
 - [x] 图标为方块问题?没有安装icons, `ttf-font-awesome`
 - [] 还有其他更好看的icons font吗?
 
-## conky ?
+## conky
 
 - 桌面时钟显示方框，修改conky
   - `/usr/share/conky/conky_maia` 21:25, `font Bitstream Vera Sans` -> `font WenQuanYi Zen Hei`
   - 字体在安装的里面选择
-- [] 更好看的conky显示
+- [x] 更好看的conky显示
   - i3 edition路径 `/usr/share/conky`,加入自定义的配置
   - 修改`/usr/bin/start_conky***`的脚本
   - 然后修改 `.i3/config` 下面启动的配置
+  - icon文件，在[web](http://mathew-kurian.github.io/CharacterMap/)打开`fa-*`，选择喜欢的把Character放到对应的conky配置中即可。保存conky自动刷新。
+- [x] 关于AwesomeFont显示问题，已经安装了`ttf-font-awesome`, conky不显示
+  - 配置中用的是`FontAwesome`, 用命令`fc-list | grep -i awesome`可以看到没有对应的font，需要的可以改成FontAwesome5Free之类的，看icon属于哪个文件，注意不要有空格，被这个困扰了很久。
 
-## status bar
+## statusbar
 
 下面默认的bar不是很好看,考虑换成powerline
 
@@ -143,4 +146,3 @@ export 路径 `$XDG_CONFIG_HOME`, `~/.config` , 在这个目录下建powerline�
 - nvm install VERSION
 - npm install -g @vue/cli
 - 项目 npm install -s
-
