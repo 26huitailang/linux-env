@@ -66,7 +66,7 @@ source /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 sudo pacman -S netease-cloud-music
 
 # autojump
-sudo pacman -S autojump
+sudo pacman -S autojump --noconfirm
 
 # enpass
 sudo pacman -S enpass-bin

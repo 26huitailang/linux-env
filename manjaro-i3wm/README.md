@@ -55,8 +55,9 @@ WenQuanYi Zen Hei Mono稍微能看一点,还是MAC舒服
 
 ## status bar
 
-- [] 网络显示?
-- [] 时间显示?
+- [x] 网络显示
+- [x] 时间显示
+- [] 默认是i3bar（i3status只是状态数据），其他的bar，polybar，github上有
 
 ## tools
 
