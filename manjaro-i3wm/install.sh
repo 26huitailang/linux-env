@@ -77,5 +77,17 @@ sudo pacman -S nvm --noconfirm
 # git gui
 sudo pacman -S gitkraken --noconfirm
 
+# redis
+sudo pacman -S redis
+
+# postman
+sudo pacman -S postman-bin
+
+# docker
+sudo pacman -S docker docker-compose
+# 非root使用docker
+sudo groupadd docker
+sudo gpasswd -a ${USER} docker
+
 # reboot
 echo "sudo reboot"

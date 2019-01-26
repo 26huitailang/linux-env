@@ -1,0 +1,9 @@
+{
+  "debug" : true,
+  "registry-mirrors" : [
+    "https://registry.docker-cn.com"
+  ],
+  "experimental" : false,
+  "storage-driver": "devicemapper"
+}
+

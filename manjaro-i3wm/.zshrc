@@ -79,6 +79,8 @@ plugins=(
   zsh-autosuggestions
   vagrant
   tmux
+  docker
+  docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh

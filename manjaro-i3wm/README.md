@@ -17,6 +17,7 @@
 - wallpaper.sh, nitrogen自动更换壁纸的脚本
 - .npmrc, source
 - .pip/pip.conf, source
+- docker config
 
 ## install.sh
 
@@ -36,6 +37,11 @@
 - enpass-bin
 - visual-studio-code-bin
 - gitkraken, git gui tool
+- redis
+  - systemctl enable redis.service
+  - systemctl start redis.service
+- postman-bin 
+- docker docker-compose
 
 ## 还要做
 

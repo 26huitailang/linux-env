@@ -18,14 +18,14 @@ conky.config = {
     border_outer_margin = 0,
     xinerama_head = 2,
     alignment = 'top_right',
-    gap_x = 20,
-    gap_y = 20,
+    gap_x = 30,
+    gap_y = 40,
     draw_shades = true,
     draw_outline = false,
     draw_borders = false,
     draw_graph_borders = false,
     use_xft = true,
-    font = 'WenQuanYi Micro Hei:size=12',
+    font = 'WenQuanYi Micro Hei:size=10',
     xftalpha = 0.8,
     uppercase = false,
     default_color = '#FFFFFF',
@@ -35,7 +35,7 @@ conky.config = {
 conky.text = [[
     ${color #DD3A21}${font FontAwesome5Brands}Peter${font}${color}${goto 200}${font FontAwesome5FreeSolid}${font}${voffset -2} ${time %d/%m/%y}  ${font FontAwesome5FreeSolid}${font}${voffset -2} ${time %H:%M}
     ${hr}
-    ${font FontAwesome}${font}${voffset -2} ${addrs enp3s0}
+    ${font FontAwesome5FreeSolid}${font}${voffset -2} ${addrs enp3s0}
     ${goto 20}${upspeedgraph enp3s0 30,178 06E9F8 2104FA}${goto 202}${downspeedgraph enp3s0 30,175 FFFF00 DD3A21}
     ${font FontAwesome5FreeSolid}${goto 20}${font} ${upspeed enp3s0}${font FontAwesome5FreeSolid}${goto 202}${font} ${downspeed enp3s0}
     ${hr}

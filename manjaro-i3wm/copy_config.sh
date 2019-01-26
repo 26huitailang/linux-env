@@ -10,8 +10,10 @@ chmod +x ~/wallpaper.sh
 cp .npmrc ~/.npmrc
 sudo cp start_conky_fontawesome /usr/bin/
 sudo chmod +x /usr/bin/start_conky_fontawesome
+sudo cp docker/daemon.json /etc/docker/
 
 # 文件夹
 cp -r powerline ~/.config/
 cp -r .pip ~/
 cp -r conky ~/.config/
+cp -r i3status ~/.config/
