@@ -71,17 +71,19 @@ DEFAULT_USER="26huitailang"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
   autojump
-  virtualenv
+  brew
+  docker
+  docker-compose
+  fabric
+  git
   gitbook
   fzf
-  brew
   npm
-  fabric
-  zsh-autosuggestions
-  vagrant
   tmux
+  virtualenv
+  vagrant
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -136,7 +138,8 @@ alias go_kali_server="ssh root@192.168.9.236"
 
 # --- fzf start ---
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
-
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # --- fzf end ---
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# tldr
+# complete -W "$(tldr 2>/dev/null --list)" tldr
