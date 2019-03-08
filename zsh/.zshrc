@@ -10,6 +10,10 @@ export PATH=/Users/26huitailang/Downloads/apache-maven-3.5.4/bin:$PATH
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
 # rust
 export PATH="$HOME/.cargo/bin:$PATH" 
+# golang
+export GOROOT=/usr/local/go  
+export GOPATH=$HOME/gopath
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/26huitailang/.oh-my-zsh
