@@ -20,6 +20,8 @@ Plugin 'scrooloose/nerdtree'
 " markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+" golang
+Plugin 'fatih/vim-go'
 call vundle#end()
 filetype plugin indent on
 
