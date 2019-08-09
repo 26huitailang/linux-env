@@ -22,6 +22,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 " golang
 Plugin 'fatih/vim-go'
+" gitgutter
+Plug 'airblade/vim-gitgutter'
 call vundle#end()
 filetype plugin indent on
 

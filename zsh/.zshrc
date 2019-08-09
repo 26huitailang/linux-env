@@ -14,6 +14,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export GOROOT=/usr/local/go  
 export GOPATH=$HOME/gopath
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:$GOPATH/src/github.com/uber/go-torch/FlameGraph
+export TAG=`date +DEPLOYED-%F/%H%M`
+export GOPROJECT=$HOME/go-project
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/26huitailang/.oh-my-zsh
@@ -134,7 +137,16 @@ fi
 # ---------- alias start ----------
 # alias 可以查看所有可用列表
 # ssh
-alias go_kali_server="ssh root@192.168.9.236"
+alias ssh145="ssh root@192.168.8.145"
+alias ssh240="ssh root@192.168.8.240"
+alias ssh-lq-end="ssh root@192.168.8.109"
+alias ssh-lq-container="ssh root@192.168.8.123"
+alias sshhk119.28.204.141="ssh root@119.28.204.141"
+alias lsof-port='func() { sudo lsof -nP -iTCP:$1 -sTCP:LISTEN;}; func' 
+alias lsof-pid='func() { lsof -p $1;}; func' 
+alias lsof-name='func() { sudo lsof -nP -iTCP -sTCP:LISTEN | grep $1;}; func' 
+alias lsof-all='func() { sudo lsof -nP -iTCP -sTCP:LISTEN}; func' 
+alias ps-grep='func() {ps -ef | grep $1;}; func'
 # git
 # 详见~/.oh-my-zsh/plugins/git/git.plugin.zsh
 # ---------- alias end   ----------
