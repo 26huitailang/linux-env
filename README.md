@@ -2,6 +2,19 @@
 
 自用，仅供参考，如果要使用我的脚本，请在了解后酌情裁剪。
 
+## debian
+
+用于初始化一些系统环境和工具。
+
+推荐，先下载再剪裁：
+
+    wget https://github.com/26huitailang/linux-env/blob/master/debian/starter.sh
+
+执行所有（不推荐）：
+
+    apt update && \
+    sh -c "$(wget https://github.com/26huitailang/linux-env/blob/master/debian/starter.sh)"
+
 ## Manjaro-i3wm
 
 ![manjaro-i3wm-terminal-preview](manjaro-i3wm/2019-01-17-161222_1912x968_scrot.png)
