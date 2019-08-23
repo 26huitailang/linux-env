@@ -8,12 +8,14 @@
 
 推荐，先下载再剪裁：
 
-    wget https://github.com/26huitailang/linux-env/blob/master/debian/starter.sh
+    wget https://raw.githubusercontent.com/26huitailang/linux-env/master/debian/starter.sh
 
 执行所有（不推荐）：
 
     apt update && \
-    sh -c "$(wget https://github.com/26huitailang/linux-env/blob/master/debian/starter.sh)"
+    wget https://raw.githubusercontent.com/26huitailang/linux-env/master/debian/starter.sh -O starter.sh
+    chmod +x starter.sh
+    ./starter.sh
 
 ## Manjaro-i3wm
 
