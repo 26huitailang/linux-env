@@ -13,8 +13,8 @@
 执行所有（不推荐）：
 
     apt update && \
-    wget https://raw.githubusercontent.com/26huitailang/linux-env/master/debian/starter.sh -O starter.sh
-    chmod +x starter.sh
+    wget https://raw.githubusercontent.com/26huitailang/linux-env/master/debian/starter.sh -O starter.sh && \
+    chmod +x starter.sh && \
     ./starter.sh
 
 ## Manjaro-i3wm
