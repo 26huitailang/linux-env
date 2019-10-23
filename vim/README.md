@@ -78,5 +78,5 @@ filetype plugin indent on
 ## YCM 编译
 
 - cd ~/.vim/bundle/YoucompleteMe/
-- ./install.py --calang-completer, include c family
+- ./install.py --clang-completer --go-completer, include c/go family
 - cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py ~/.vim/
