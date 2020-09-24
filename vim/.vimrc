@@ -2,34 +2,33 @@
 " get from vim-pathogen
 " call pathogen#infect()
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"filetype off
+call plug#begin('~/.vim/plugged')
 " Plugin
-Plugin 'VundleVim/Vundle.vim'
+"Plugin 'VundleVim/Vundle.vim'
 " 这是安装Github上的插件"
-Plugin 'Lokaltog/vim-powerline'
+Plug 'Lokaltog/vim-powerline'
 " 神器
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " flake8 pep8
-Plugin 'nvie/vim-flake8'
+Plug 'nvie/vim-flake8'
 " virtualenv
-Plugin 'plytophogy/vim-virtualenv'
+Plug 'plytophogy/vim-virtualenv'
 " nerdtree
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " markdown
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 " golang
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
 " gitgutter
 Plug 'airblade/vim-gitgutter'
-call vundle#end()
-filetype plugin indent on
+call plug#end()
+"filetype plugin indent on
 
 " leader key --------------- start -----------------
 " nerdtree
-map <leader>t :NERDTree<CR>
+map <leader>t :NERDTreeToggle<CR>
 " autocm VimEnter * NERDTree
 " YCM跳转定义
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
