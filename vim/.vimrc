@@ -46,6 +46,7 @@ set number
 set relativenumber
 
 " python with virtualenv support
+let g:virtualenv_directory = '.'
 "py3 << EOF
 "import os.path
 "import sys
