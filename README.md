@@ -40,3 +40,12 @@ If you want to try this. `Box url` is in `vagrant/README.md`. Follow the vagrant
 ## others
 
 not useful
+
+## deprecated
+
+mermaid test
+
+```mermaid
+graph TD;
+    A-->B;
+```
