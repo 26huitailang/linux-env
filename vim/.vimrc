@@ -35,7 +35,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " leader key --------------- end -----------------
 
 " Youcompleteme
-let g:ycm_python_binary_path = 'python'  " 进入命令行python使用的第一个环境，可以识别virtualenv
+let g:ycm_python_binary_path = 'python3'  " 进入命令行python使用的第一个环境，可以识别virtualenv
 " cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py ~/.vim/
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -184,3 +184,7 @@ if has("python")
         call LoadVirtualEnv(defaultvirtualenv)
     endif
 endif
+
+" Yggdroot/indentLine
+let g:indent_guides_guide_size      = 1 " 指定对齐线的尺寸
+let g:indent_guides_start_level     = 2 " 从第二层开始可视化显示缩进

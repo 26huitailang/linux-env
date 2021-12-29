@@ -7,16 +7,24 @@ export PATH=/usr/local/share/python:$PATH
 # export PATH=/Users/26huitailang/.pyenv/versions/3.6.5/bin:${PATH}
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
 export PATH=/Users/26huitailang/Downloads/apache-maven-3.5.4/bin:$PATH
+export PATH="/user/local/opt/postgresql@10/bin":$PATH
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
 # rust
 export PATH="$HOME/.cargo/bin:$PATH" 
 # golang
-export GOROOT=/usr/local/go  
+export GOROOT=/Users/26huitailang/sdk/go1.17.4
+#export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/gopath
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:$GOPATH/src/github.com/uber/go-torch/FlameGraph
+# python
+export PATH=$PATH:/Users/26huitailang/Library/Python/3.9/bin
 export TAG=`date +DEPLOYED-%F/%H%M`
 export GOPROJECT=$HOME/go-project
+# nvm
+# export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/26huitailang/.oh-my-zsh
@@ -24,7 +32,8 @@ export ZSH=/Users/26huitailang/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+ZSH_THEME="amuse"
 # ZSH_THEME="robbyrussell"
 DEFAULT_USER="26huitailang"
 
@@ -84,13 +93,13 @@ plugins=(
   docker-compose
   fabric
   git
-  gitbook
-  fzf
   npm
   tmux
-  virtualenv
+  #virtualenv
   vagrant
   zsh-autosuggestions
+  fzf
+  pyenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -137,6 +146,7 @@ fi
 # ---------- alias start ----------
 # alias 可以查看所有可用列表
 # ssh
+alias sshpi="ssh pi@192.168.1.23"
 alias ssh145="ssh root@192.168.8.145"
 alias ssh240="ssh root@192.168.8.240"
 alias ssh-lq-end="ssh root@192.168.8.109"
@@ -147,6 +157,22 @@ alias lsof-pid='func() { lsof -p $1;}; func'
 alias lsof-name='func() { sudo lsof -nP -iTCP -sTCP:LISTEN | grep $1;}; func' 
 alias lsof-all='func() { sudo lsof -nP -iTCP -sTCP:LISTEN}; func' 
 alias ps-grep='func() {ps -ef | grep $1;}; func'
+alias pc="proxychains4 -f ~/.proxychains.conf"
+alias proxy='export all_proxy=socks5://127.0.0.1:1080'
+alias unproxy='unset all_proxy'
+proxy_on() {
+    export http_proxy=http://127.0.0.1:1080
+    export https_proxy=http://127.0.0.1:1080
+    echo "proxy on"
+}
+proxy_off() {
+    unset http_proxy
+    unset https_proxy
+    echo "proxy off"
+}
+set_npm_taobao() {
+    npm config set registry https://registry.npm.taobao.org
+}
 # git
 # 详见~/.oh-my-zsh/plugins/git/git.plugin.zsh
 # ---------- alias end   ----------
@@ -159,3 +185,21 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O 
 
 # tldr
 # complete -W "$(tldr 2>/dev/null --list)" tldr
+#eval "$(pyenv init -)"
+
+alias gf=gf
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+lg()
+{
+    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+    lazygit "$@"
+
+    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+        cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+        rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+    fi
+}
+
