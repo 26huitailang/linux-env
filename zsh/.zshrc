@@ -1,16 +1,15 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export PATH=/usr/local/opt/python/bin:$PATH
-# export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}
 export PATH=/usr/local/bin/:${PATH}
 export PATH=/usr/local/share/python:$PATH
-# export PATH=/Users/26huitailang/.pyenv/versions/3.6.5/bin:${PATH}
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
 export PATH=/Users/26huitailang/Downloads/apache-maven-3.5.4/bin:$PATH
 export PATH="/user/local/opt/postgresql@10/bin":$PATH
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
+export JAVA_HOME="/usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home"
 # rust
-export PATH="$HOME/.cargo/bin:$PATH" 
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.wasmer/bin:$PATH"
 # golang
 export GOROOT=/Users/26huitailang/sdk/go1.17.4
 #export GOROOT=/usr/local/opt/go/libexec
@@ -18,7 +17,7 @@ export GOPATH=$HOME/gopath
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:$GOPATH/src/github.com/uber/go-torch/FlameGraph
 # python
-export PATH=$PATH:/Users/26huitailang/Library/Python/3.9/bin
+#export PATH=$PATH:/Users/26huitailang/Library/Python/3.9/bin
 export TAG=`date +DEPLOYED-%F/%H%M`
 export GOPROJECT=$HOME/go-project
 # nvm
@@ -43,7 +42,6 @@ DEFAULT_USER="26huitailang"
 # looking in ~/.oh-my-zsh/themes/
 # An empty array have no effect
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -133,15 +131,15 @@ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export LC_ALL=en_US.UTF-8  
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/10/bin
 
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
+# if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+#     export WORKON_HOME=$HOME/.virtualenvs
+#     source /usr/local/bin/virtualenvwrapper.sh
+# fi
 
 # ---------- alias start ----------
 # alias 可以查看所有可用列表
@@ -152,10 +150,10 @@ alias ssh240="ssh root@192.168.8.240"
 alias ssh-lq-end="ssh root@192.168.8.109"
 alias ssh-lq-container="ssh root@192.168.8.123"
 alias sshhk119.28.204.141="ssh root@119.28.204.141"
-alias lsof-port='func() { sudo lsof -nP -iTCP:$1 -sTCP:LISTEN;}; func' 
-alias lsof-pid='func() { lsof -p $1;}; func' 
-alias lsof-name='func() { sudo lsof -nP -iTCP -sTCP:LISTEN | grep $1;}; func' 
-alias lsof-all='func() { sudo lsof -nP -iTCP -sTCP:LISTEN}; func' 
+alias lsof-port='func() { sudo lsof -nP -iTCP:$1 -sTCP:LISTEN;}; func'
+alias lsof-pid='func() { lsof -p $1;}; func'
+alias lsof-name='func() { sudo lsof -nP -iTCP -sTCP:LISTEN | grep $1;}; func'
+alias lsof-all='func() { sudo lsof -nP -iTCP -sTCP:LISTEN}; func'
 alias ps-grep='func() {ps -ef | grep $1;}; func'
 alias pc="proxychains4 -f ~/.proxychains.conf"
 alias proxy='export all_proxy=socks5://127.0.0.1:1080'
@@ -187,7 +185,6 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O 
 # complete -W "$(tldr 2>/dev/null --list)" tldr
 #eval "$(pyenv init -)"
 
-alias gf=gf
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
@@ -203,3 +200,15 @@ lg()
     fi
 }
 
+# alias
+alias gf=gf
+alias vim=nvim
+if [ -n "$PYTHONPATH" ]; then
+    export PYTHONPATH='/usr/local/Cellar/pdm/1.12.2/libexec/lib/python3.10/site-packages/pdm/pep582':$PYTHONPATH
+else
+    export PYTHONPATH='/usr/local/Cellar/pdm/1.12.2/libexec/lib/python3.10/site-packages/pdm/pep582'
+fi
+
+# Wasmer
+export WASMER_DIR="/Users/26huitailang/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
