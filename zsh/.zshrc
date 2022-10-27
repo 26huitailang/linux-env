@@ -1,4 +1,5 @@
 # If you come from bash you might have to change your $PATH.
+export EDITOR=nvim
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin/:${PATH}
 export PATH=/usr/local/share/python:$PATH
@@ -11,7 +12,7 @@ export JAVA_HOME="/usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.wasmer/bin:$PATH"
 # golang
-export GOROOT=/Users/26huitailang/sdk/go1.17.4
+export GOROOT=/Users/26huitailang/sdk/go1.19
 #export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/gopath
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
@@ -136,11 +137,6 @@ export LANG=en_US.UTF-8
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/10/bin
 
-# if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-#     export WORKON_HOME=$HOME/.virtualenvs
-#     source /usr/local/bin/virtualenvwrapper.sh
-# fi
-
 # ---------- alias start ----------
 # alias 可以查看所有可用列表
 # ssh
@@ -161,7 +157,9 @@ alias unproxy='unset all_proxy'
 proxy_on() {
     export http_proxy=http://127.0.0.1:1080
     export https_proxy=http://127.0.0.1:1080
-    echo "proxy on"
+    echo "test curl https://google.com"
+    curl https://google.com
+    echo "proxy on finished"
 }
 proxy_off() {
     unset http_proxy
@@ -212,3 +210,4 @@ fi
 # Wasmer
 export WASMER_DIR="/Users/26huitailang/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
