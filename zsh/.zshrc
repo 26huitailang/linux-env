@@ -206,8 +206,14 @@ if [ -n "$PYTHONPATH" ]; then
 else
     export PYTHONPATH='/usr/local/Cellar/pdm/1.12.2/libexec/lib/python3.10/site-packages/pdm/pep582'
 fi
+alias ocr='pngpaste - | tesseract -l chi_sim stdin stdout'
 
 # Wasmer
 export WASMER_DIR="/Users/26huitailang/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
+eval "$(atuin init zsh)"
+
+# Hishtory Config:
+export PATH="$PATH:/Users/26huitailang/.hishtory"
+source /Users/26huitailang/.hishtory/config.zsh
