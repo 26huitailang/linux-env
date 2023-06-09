@@ -12,7 +12,7 @@ export JAVA_HOME="/usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.wasmer/bin:$PATH"
 # golang
-export GOROOT=/Users/26huitailang/sdk/go1.19
+export GOROOT=/Users/26huitailang/sdk/go1.20
 #export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/gopath
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
@@ -33,7 +33,8 @@ export ZSH=/Users/26huitailang/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="agnoster"
-ZSH_THEME="amuse"
+#ZSH_THEME="amuse"
+ZSH_THEME="half-life"
 # ZSH_THEME="robbyrussell"
 DEFAULT_USER="26huitailang"
 
@@ -169,6 +170,20 @@ proxy_off() {
 set_npm_taobao() {
     npm config set registry https://registry.npm.taobao.org
 }
+wireshark_chown() {
+    cd /dev
+    sudo chown `whoami`:admin bp*
+}
+pdm_venv_activate() {
+    eval $('pdm' 'venv' 'activate' "$1")
+}
+function pyinstall() {
+    v=$1
+    echo '准备按照 Python' $v
+    curl -L https://npm.taobao.org/mirrors/python/$v/Python-$v.tar.xz -o ~/.pyenv/cache/Python-$v.tar.xz
+    pyenv install $v
+}
+
 # git
 # 详见~/.oh-my-zsh/plugins/git/git.plugin.zsh
 # ---------- alias end   ----------
@@ -212,8 +227,8 @@ alias ocr='pngpaste - | tesseract -l chi_sim stdin stdout'
 export WASMER_DIR="/Users/26huitailang/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
-eval "$(atuin init zsh)"
 
-# Hishtory Config:
-export PATH="$PATH:/Users/26huitailang/.hishtory"
-source /Users/26huitailang/.hishtory/config.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+

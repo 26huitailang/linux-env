@@ -22,9 +22,10 @@ sudo apt update
 sudo apt install git
 # python
 sudo apt install python3 python3-dev python3-venv
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl
 # python pdm
 if command -v pdm > /dev/null 2>&1; then
-	echo "pdm exists"
+    echo "pdm exists"
 else
 	echo "pdm not exists, installing"
     curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
@@ -46,3 +47,4 @@ eval "$(pyenv virtualenv-init -)"
 EOF
 fi
 source ~/.bashrc
+
