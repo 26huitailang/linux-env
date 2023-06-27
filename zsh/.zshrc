@@ -231,4 +231,5 @@ export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-
+# devpod completion
+source <(devpod completion zsh);compdef _devpod devpod
