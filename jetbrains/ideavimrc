@@ -1,0 +1,16 @@
+" ~/.ideavimrc
+" """ Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set easymotion
+
+""" Mappings --------------------------------
+map <leader>f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
+map <leader>d <Action>(Debug)
+map <leader>r <Action>(RenameElement)
+map <leader>c <Action>(Stop)
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader><leader>t <Action>(ActivateTerminalToolWindow)
+map <leader><leader>u <Action>(PublishGroup.UploadAllOpenFilesTo)

@@ -21,6 +21,10 @@ export PATH=$PATH:$GOPATH/src/github.com/uber/go-torch/FlameGraph
 #export PATH=$PATH:/Users/26huitailang/Library/Python/3.9/bin
 export TAG=`date +DEPLOYED-%F/%H%M`
 export GOPROJECT=$HOME/go-project
+export PATH="/usr/local/opt/node@20/bin:$PATH"
+export PATH="/usr/local/opt/openssl@3.0/bin:$PATH"
+
+export HOMEBREW_NO_AUTO_UPDATE=1
 # nvm
 # export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
@@ -155,14 +159,14 @@ alias ps-grep='func() {ps -ef | grep $1;}; func'
 alias pc="proxychains4 -f ~/.proxychains.conf"
 alias proxy='export all_proxy=socks5://127.0.0.1:1080'
 alias unproxy='unset all_proxy'
-proxy_on() {
+proxy-on() {
     export http_proxy=http://127.0.0.1:1080
     export https_proxy=http://127.0.0.1:1080
     echo "test curl https://google.com"
     curl https://google.com
     echo "proxy on finished"
 }
-proxy_off() {
+proxy-off() {
     unset http_proxy
     unset https_proxy
     echo "proxy off"
@@ -230,6 +234,5 @@ export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # devpod completion
 source <(devpod completion zsh);compdef _devpod devpod
